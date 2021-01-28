@@ -5,7 +5,6 @@ export default async (req, res) => {
 
     const { user, bug } = req.body;
 
-    console.log(req.body);
     const result = await db.collection('bugs').insertOne({
         bugs: {
             user: user,
@@ -14,5 +13,6 @@ export default async (req, res) => {
         createdAt: new Date()
     })
 
+    res.json(result);
     console.log(result.ops);
 }

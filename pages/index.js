@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import axios from 'axios';
 
 export default function Home() {
+
+  axios.get('/api/bugs/read').then(res => console.log(res))
 
   return (
     <div className={styles.container}>
