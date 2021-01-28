@@ -2,11 +2,13 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Bug Tracker</title>
+        <link rel="icon" href="/bug-solid.svg" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"></link>
       </Head>
 
       <main className={styles.main}>
