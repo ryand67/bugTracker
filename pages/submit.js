@@ -12,12 +12,12 @@ export default function submit() {
             </Head>
 
             <main className='box-border m-0 p-0 flex justify-center items-center w-100 h-screen'>
-                <form className="w-50 h-5 border-2 border-transparent bg-gray-100 w-1/3 h-1/2 py-8 flex justify-center items-center flex-col text-left rounded-xl" action="">
+                <form className="w-50 h-5 border-2 border-transparent bg-gray-100 w-1/3 h-1/2 py-8 flex justify-center items-center flex-col rounded-xl" action="">
                     <label className="py-2" htmlFor="name">Name:</label>
-                    <input className="border-2 border-gray h-8 w-2/3" type="text" name="name" id=""/>
+                    <input className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-2/3 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" type="text" name="name" id=""/>
                     <label className="py-2" htmlFor="bug">Issue Description:</label>
-                    <textarea className="border-2 border-gray h-52 w-2/3" name="bug" id="" cols="30" rows="10"></textarea>
-                    <p href="" className="w-1/4 text-center border-3 bg-red-400 cursor-pointer text-white my-8 p-2 rounded-xl">Submit</p>
+                    <textarea className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-2/3 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" name="bug" id="" cols="30" rows="10"></textarea>
+                    <p href="" className="w-1/4 text-center border-3 bg-red-400 cursor-pointer text-white my-8 p-2 rounded-xl transition hover:bg-red-500">Submit</p>
                 </form>
             </main>
         </div>
