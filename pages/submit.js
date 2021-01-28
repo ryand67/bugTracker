@@ -12,14 +12,15 @@ export default function submit() {
     }
 
     const handleIssueChange = (e) => {
-        console.log(e.target.value);
         setIssue(e.target.value);
     }
     
-    const handleFormSubmit = () => {
+    const handleFormSubmit = (e) => {
         axios.post('/api/bugs/create', {
             user: name,
             bug: issue
+        }).then(() => {
+            window.location.replace('/');
         })
     }
 
