@@ -14,8 +14,8 @@ export default function Home() {
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
       </Head>
 
-      <main className='box-border m-0 p-0 flex justify-center align-center w-100 h-screen'>
-        <h1 className="m-0">asdf</h1>
+      <main className='box-border m-0 p-0 flex justify-center items-center w-100 h-screen'>
+        <a href="/submit" className="text-xl bg-red-500 cursor-pointer p-3 rounded-lg text-white">Submit Bug</a>
       </main>
     </div>
   )
