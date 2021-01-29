@@ -3,11 +3,12 @@ import connect from '../../../utils/database';
 export default async (req, res) => {
     const { db } = await connect();
 
-    const { user, bug } = req.body;
+    const { user, bug, subject } = req.body;
 
     const result = await db.collection('bugs').insertOne({
-        bugs: {
+        bug: {
             user: user,
+            subject: subject,
             bugDesc: bug
         },
         createdAt: new Date()
