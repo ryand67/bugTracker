@@ -1,10 +1,19 @@
 import Head from 'next/head'
+import { useState, useEffect } from 'react';
 // import styles from '../styles/Home.module.css'
 import 'tailwindcss/tailwind.css';
 import HomeIssue from '../components/HomeIssue';
 import axios from 'axios';
 
 export default function Home() {
+
+  const [homeIssues, setHomeIssues] = useState([]);
+
+  useEffect(() => {
+    axios.get('api/bugs/read').then(res => {
+      setHomeIssues(res.data);
+    })
+  }, [])
 
   return (
     <div>
@@ -15,8 +24,11 @@ export default function Home() {
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
       </Head>
 
-      <main className='box-border m-0 p-0 flex justify-center items-center w-100 h-screen'>
+      <main className='box-border m-0 p-0 flex justify-center items-center flex-col w-full h-screen'>
         <a href="/submit" className="text-xl bg-red-500 cursor-pointer p-3 rounded-lg text-white">Submit Bug</a>
+        {homeIssues.map((item, i) => {
+          return <HomeIssue info={item} key={i} />
+        })}
       </main>
     </div>
   )
