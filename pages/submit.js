@@ -26,6 +26,7 @@ export default function submit() {
             subject: subject,
             bug: issue
         }).then(() => {
+            document.getElementById('submitForm').reset();
             window.location.replace('/');
         })
     }
@@ -40,7 +41,7 @@ export default function submit() {
             </Head>
 
             <main className='box-border m-0 p-0 flex justify-center items-center w-100 h-screen'>
-                <form onSubmit={handleFormSubmit} className="shadow border-2 border-transparent bg-gray-100 w-1/3 h-2/3 py-8 flex justify-center items-center flex-col rounded-xl" action="">
+                <form onSubmit={handleFormSubmit} className="shadow border-2 border-transparent bg-gray-100 w-1/3 h-2/3 py-8 flex justify-center items-center flex-col rounded-xl" id="submitForm">
                     <label className="text-lg py-2" htmlFor="name">Name:</label>
                     <input onChange={handleNameChange} className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-2/3 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" type="text" name="name" placeholder="Name"/>
                     <label className="text-lg py-2" htmlFor="subject">Subject:</label>
