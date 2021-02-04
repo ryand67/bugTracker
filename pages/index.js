@@ -29,7 +29,7 @@ export default function Home() {
         <a href="/submit" className="text-xl bg-red-500 cursor-pointer p-3 rounded-lg text-white">Submit Bug</a>
         <section className="my-4">
           {homeIssues.map((item, i) => {
-            return <HomeIssue info={item} key={i} />
+            return <HomeIssue info={item} key={i} usedKey={i} />
           })}
         </section>
       </main>

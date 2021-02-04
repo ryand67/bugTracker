@@ -10,6 +10,7 @@ export default function HomeIssue(props) {
                 <p className="mx-4">{props.info.bug.subject}</p>
                 <p className="mx-4">{props.info.bug.bugDesc}</p>
                 <p className="mx-4">{props.info.createdAt}</p>
+                <p className="mx-4">{props.usedKey + 1}</p>
             </div>
         </div>
     )
