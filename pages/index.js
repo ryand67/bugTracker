@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
 import HomeIssue from '../components/HomeIssue';
 import axios from 'axios';
+import Nav from '../components/Nav';
 
 export default function Home() {
 
@@ -23,7 +24,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"></link>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
       </Head>
-
+      <Nav />
       <main className='box-border m-0 p-0 flex justify-center items-center flex-col w-full h-screen'>
         <a href="/submit" className="text-xl bg-red-500 cursor-pointer p-3 rounded-lg text-white">Submit Bug</a>
         {homeIssues.map((item, i) => {

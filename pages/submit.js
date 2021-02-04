@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Nav from '../components/Nav';
 import axios from 'axios';
 
 export default function submit() {
@@ -39,6 +40,8 @@ export default function submit() {
                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"></link>
                 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
             </Head>
+
+            <Nav />
 
             <main className='box-border m-0 p-0 flex justify-center items-center w-100 h-screen'>
                 <form onSubmit={handleFormSubmit} className="shadow border-2 border-transparent bg-gray-100 w-2/3 h-2/3 py-8 flex justify-center items-center flex-col rounded-xl l:w-2/3" id="submitForm">
