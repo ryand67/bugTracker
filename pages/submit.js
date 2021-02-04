@@ -8,6 +8,7 @@ export default function submit() {
     const [name, setName] = useState('');
     const [subject, setSubject] = useState('');
     const [issue, setIssue] = useState('');
+    const [submitIcon, setSubmitIcon] = useState(false);
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -22,6 +23,7 @@ export default function submit() {
     }
     
     const handleFormSubmit = (e) => {
+        setSubmitIcon(true);
         axios.post('/api/bugs/create', {
             user: name,
             subject: subject,
@@ -29,6 +31,8 @@ export default function submit() {
         }).then(() => {
             document.getElementById('submitForm').reset();
             window.location.replace('/');
+        }).then(() => {
+            setSubmitIcon(false);
         })
     }
 
@@ -51,7 +55,8 @@ export default function submit() {
                     <input required onChange={handleSubjectChange} className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-2/3 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" type="text" name="subject" placeholder="Subject"/>
                     <label className="text-lg py-2" htmlFor="bug">Issue Description:</label>
                     <textarea required onChange={handleIssueChange} className="px-4 py-2 border h-1/2 focus:ring-gray-500 focus:border-gray-900 w-2/3 sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" name="bug" id="" cols="30" rows="10" placeholder="What's going wrong?"></textarea>
-                    <p href="" className="w-1/4 text-center border-3 bg-red-400 cursor-pointer text-white my-8 p-2 rounded-xl transition hover:bg-red-500" onClick={handleFormSubmit}>Submit</p>
+                    {submitIcon ? <i className="fas fa-circle-notch fa-spin my-8 p-2 text-red-400 text-3xl"></i> : <p className="w-1/4 text-center border-3 bg-red-400 cursor-pointer text-white my-8 p-2 rounded-xl transition hover:bg-red-500" onClick={handleFormSubmit}>Submit</p>}
+                    
                </form>
             </main>
         </div>
