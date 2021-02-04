@@ -27,7 +27,7 @@ export default function Home() {
       <Nav />
       <main className='box-border m-0 p-0 flex justify-center items-center flex-col w-full h-screen'>
         <a href="/submit" className="text-xl bg-red-500 cursor-pointer p-3 rounded-lg text-white">Submit Bug</a>
-        <section className="my-4">
+        <section className="my-4 w-screen flex flex-col">
           {homeIssues.map((item, i) => {
             return <HomeIssue info={item} key={i} usedKey={i} />
           })}
