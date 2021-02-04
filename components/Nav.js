@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Nav() {
     return (
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap fixed w-screen">
             <div className="w-full">
                 <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-gray-500 rounded-b-m">
                     <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
